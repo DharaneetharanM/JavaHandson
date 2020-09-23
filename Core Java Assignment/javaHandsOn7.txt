@@ -1,0 +1,111 @@
+
+package seventhpg;
+import java.io.*;
+import java.util.*;
+
+public class Delivery{
+	long over;
+	long ball;
+	long runs;
+	String batsman ;
+	String bowler;
+	String nonStriker;
+
+//Argument Constructor
+public Delivery(long over, long ball, long runs, String batsman, String bowler, String nonStriker){
+	this.over = over;
+	this.ball = ball;
+	this.runs = runs;
+	this.batsman = batsman;
+	this.bowler = bowler;
+	this.nonStriker = nonStriker;
+}
+
+//Default Constructor
+public Delivery(){
+	this.over = 1
+	this.ball = 1;
+	this.runs = 1;
+	this.batsman = "Dhoni";
+	this.bowler = "Pat Cummins";
+	this.nonStriker = "Raina";
+}
+
+public void setOver(long currentOver){
+	over = currentOver;
+}
+
+public void setBalls(long currentBall){
+	ball = currentBall;
+}
+
+public void setRuns(long currentRuns){
+	runs = currentRuns;
+}
+
+public void setBatsman(long currentBatsman){
+	batsman = currentBatsman;
+}
+
+public void setBowler(long currentBowler){
+	bowler= currentBowler;
+}
+
+public void setNonStriker(long currentNonStriker){
+	nonStriker = currentNonStriker;
+}
+
+public long getOver(){
+	return over;
+}
+
+public long getBalls(){
+	return ball;
+}
+
+public long getRuns(){
+	return runs;
+}
+
+public String getBatsman(){
+	return batsman;
+}
+
+public String getBowler(){
+	return bowler;
+}
+
+public String getNonStriker(){
+	return nonStriker;
+}
+
+public void printDetails (){
+	System.out.printLn("Delivery Details:");
+	System.out.printLn("Over : " + getOver());
+	System.out.printLn("Ball : " + getBalls());
+	System.out.printLn("Runs : " + getRuns());
+	System.out.printLn("Batsman : " + getBatsman());
+	System.out.printLn("Bowler : " + getBowler());
+	System.out.printLn("NonStriker : " + getNonStriker());
+}
+}
+
+public class Main{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		Delivery delivery = new Delivery();
+		System.out.printIn("Enter the over");
+		delivery.setOver(sc.nextLong());
+		System.out.printIn("Enter the ball");
+		delivery.setBalls(sc.nextLong());
+		System.out.printIn("Enter the runs");
+		delivery.setRuns(sc.nextLong());
+		System.out.printIn("Enter the bastman name");
+		delivery.setBatsman(sc.nextLine());
+		System.out.printIn("Enter the bowler name");
+		delivery.setBowler(sc.nextLine());
+		System.out.printIn("Enter the nonStriker name");
+		delivery.setNonStriker(sc.nextLine());
+		delivery.printDetails();
+	}
+}

@@ -1,0 +1,25 @@
+
+package fourthpg;
+import java.util.*;
+import java.lang.*;
+class Player{
+    void name(String name,String player,String skills)
+    {
+        System.out.println("Player name:"+name);
+        System.out.println("Country name:"+player);
+        System.out.println("Skills:"+skills);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		 Scanner scan=new Scanner(System.in);
+        String str=scan.nextLine();
+        String[] arr=str.split(",");
+        
+        Player obj=new Player();
+        obj.name(arr[0],arr[1],arr[2]);
+        
+      
+	}
+}

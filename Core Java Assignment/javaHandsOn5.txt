@@ -1,0 +1,40 @@
+
+package fifthpg;
+import.java.io.*;
+import.java.util.*;
+ 
+public class Delivery{
+        String name;
+        String city;
+
+public void setname (String venueName ){
+    name = venueName;
+}
+public void setcity (String venueCity ){
+    city= venueCity;
+}
+
+public String getname() {
+      return name;
+}
+
+public String getcity() {
+      return city;
+}
+}
+
+public class Main{
+    public static void main(String args[]){
+	Scanner sc = new Scanner(System.in);
+	Delivery delivery = new Delivery();
+	System.out.println( "Enter the venue name");
+	delivery.setname(sc.nextLine());
+	System.out.println("Enter the city name");
+	delivery.setcity(sc.nextLine());
+
+	System.out.println("Venue Details");
+	System.out.println("Venue Name : "+ delivery.getname());
+	Sytem.out.println("City Name : " + delivery.getcity());
+
+    }
+}

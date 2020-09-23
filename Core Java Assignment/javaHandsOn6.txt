@@ -1,0 +1,44 @@
+
+package sixthpg;
+import java.io.*;
+import java.util.*;
+
+public class ExtraType{
+	String name;
+	long runs;
+
+	public void setName(String currentName){
+		name = currentName;
+	}
+
+	public void setRuns(long currentRuns){
+		runs = currentRuns;
+	}
+
+	public String getName(){
+		return name;
+	}
+
+	public long getRuns(){
+		return runs;
+	}
+
+	public void printDetails (){
+		System.out.printLn("ExtraType Details");
+		System.out.printLn("ExtraType : " + getName());
+		System.out.printLn("Runs : " + getRuns());
+	}
+}
+
+public class Main{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		ExtraType extra = new ExtraType();
+		System.out.printIn("Enter the extratype details");
+		String userInput = sc.nextLine();
+		String[] details = userInput.split('#');	
+		delivery.setName(details[0]);
+		delivery.setRuns(details[1]);
+		delivery.printDetails();
+	}
+}
