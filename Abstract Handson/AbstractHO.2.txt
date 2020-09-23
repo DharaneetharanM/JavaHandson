@@ -1,0 +1,110 @@
+
+ package abstractproject2;
+
+abstract public class Event {
+	
+	public abstract Double projectedRevenue();
+	String name;
+	String detail;
+	String ownerName;
+
+
+	
+	}
+ package abstractproject2;
+
+public class Exhibition extends Event
+{
+
+	int noOfStall;
+	int revenue;
+
+	public int getNoOfStall() {
+		return noOfStall;
+	}
+
+	public void setNoOfStall(int noOfStall) {
+		this.noOfStall = noOfStall;
+	}
+	
+	public Double projectedRevenue()
+	{
+		
+		revenue=noOfStall*10000;
+		System.out.println("The projected revenue of that event is"+" "+revenue);
+		return 0.0;
+	}
+
+}
+package abstractproject2;
+
+public class StageEvent extends Event{
+	int noOfShow;
+	int noOfSeatsPerShow;
+	int revenue;
+	public int getNoOfShow() {
+		return noOfShow;
+	}
+	public void setNoOfShow(int noOfShow) {
+		this.noOfShow = noOfShow;
+	}
+	public int getNoOfSeatesPerShow() {
+		return noOfSeatsPerShow;
+	}
+	public void setNoOfSeatsPerShow(int noOfSeatsPerShow) {
+		this.noOfSeatsPerShow = noOfSeatsPerShow;
+	}
+	public Double projectedRevenue()
+	{
+		revenue= 50*noOfShow*noOfSeatsPerShow;
+		System.out.println("The projected revenue of that event is"+" "+revenue);
+		return 0.0;
+		}
+
+}
+package abstractproject2;
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        int choice;
+        int noOfStall,noOfShow,noOfSeatsPerShow;
+        String name,detail,ownerName;
+        int revenue;
+        Scanner input=new Scanner(System.in);
+        Event e1=new Exhibition();
+        Event e2=new StageEvent();
+        System.out.println("Enter the name of the event");
+        name=input.nextLine();
+        System.out.println("Enter the detail of the event");
+        detail=input.nextLine();
+        System.out.println("Enter the owner name of the event");
+        ownerName=input.nextLine();
+        System.out.println("Enter the type of event:");
+        System.out.println("1.Exhibition\n2.Stage Event");
+        choice=input.nextInt();
+        switch(choice)
+        {
+        case 1:
+        	System.out.println("Enter the number of stalls");
+        	noOfStall=input.nextInt();
+        	((Exhibition)e1).setNoOfStall(noOfStall);
+        	e1.projectedRevenue();
+        	break;
+        	
+        case 2:
+        	System.out.println("Enter the number of shows");
+        	noOfShow=input.nextInt();
+        	noOfSeatsPerShow=input.nextInt();
+        	((StageEvent)e2).setNoOfShow(noOfShow);
+        	((StageEvent)e2).setNoOfSeatsPerShow(noOfSeatsPerShow);
+        	e2.projectedRevenue();
+            break;
+	}
+	}
+
+}
+

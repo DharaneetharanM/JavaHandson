@@ -1,0 +1,38 @@
+package com.hcl2;
+
+import java.util.Scanner ;
+
+public class Main {
+
+  public static void main (String[]args) {
+   Scanner sc =new Scanner (System.in);
+   Exhibition e=new Exhibition ();
+   StageEvent s=new StageEvent();
+   String name,detail,ownerName ;
+   System.out.println ("Enter the name of the event");
+   name =sc.nextLine();
+   System.out.println("Enter the detail of the event");
+   detail =sc.nextLine ();
+   System.println("enter the owner name of the event");
+   ownerName =sc.nextLine ();
+   System.out.println("enter the type of event ");
+   System.out.println("1.exhibition"); 
+   System.out.println("2.stageevent");
+   int ch=sc.nextInt();
+   if(ch==1){
+      System.out.println("Enter the number of stall");
+      int numberOfStall =sc.nextInt ();
+      e.projectedMethod (noOfStall);
+  }
+   if(ch==2) {
+    System.out.println ("Enter the number of shows");
+    int =noOfShows*sc.nextInt();
+    System.out.println("Enter the number of seats per show ");
+    int noOfSeatsPershow =sc.nextInt ();
+    s.projectedMethod (noOfShows,noOfSeatspershow);
+  }
+}
+  
+
+
+    
