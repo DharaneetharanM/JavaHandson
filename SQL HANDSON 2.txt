@@ -1,0 +1,17 @@
+
+ select *from electricity_connection_type order by connection_name;
+select*from building_type order by name;
+select*from building order by owner_name;
+select*from electricity_reading order by total_units desc;
+select meter_number from meter;
+select owner_name,contact_number from building order by owner_name asc;
+select total_units,payable_amount,fine_amount from bill order by total_units desc;
+select*from slab order by from_unit asc;
+select*from building where owner_name='Nicholas';
+select*from bill where from_unit>10000 order by from_unit desc;
+select*from bill where due_date='2017-10-01' order by payable_amount desc;
+select owner_name,address,contact_number from building where email_id is null order by owner_name asc;
+select*from building where owner_name like 'M%' order by owner_name asc;
+select*from building where building_id=2 order by owner_name asc;
+select*from electricity_reading where total_units_per_day between 500 and 1000 order by total_unit asc;
+select  meter_id, total_units from electricity_reading where h13<h14 order by total_units desc;

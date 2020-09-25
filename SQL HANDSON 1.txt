@@ -1,0 +1,39 @@
+ 
+create database mydb;
+use mydb;
+create table electricity_connection_type(id int(11) primary key,connection_name varchar(20) not null);
+
+create table slab(id int(11) primary key,connection_type_id int(11) not null,from_unit int(11),to_unit int(11),rate double,constraint connection_type_fk foreign key(connection_type_id)references electricity_connection_type(id));
+
+create table building_type(id int(11) primary key,name varchar(100) not null,connection_type_id int(11) not null,constraint connection_type_id_fk foreign key(connection_type_id)references electricity_connection_type(id));
+
+create table building(id int(11) primary key,owner_name varchar(100) not null,address varchar(100) not null,building_type_id int(11) not null, contact_number varchar(100) not null,email_address varchar(100) default null, constraint building_type_id_fk foreign key( building_type_id)references building_type(id));
+
+alter table building change owner_name building_owner_name varchar(100);
+
+alter table building modify address varchar(255);
+
+alter table electricity_connection_type add constraint check_connection_name unique key (connection_name);
+
+alter table building rename to building_details;
+
+drop table slab;
+
+drop table building_details;
+
+insert into electricity_connection_type values (1,"home"),(2,"office");
+
+insert into slab(id,connection_type_id,from_unit,to_unit,rate) values (1,100,0,1,5.5),(1,101,0,1,5.1),(1,102,0,1,8.5);
+
+insert into building_type values (1,"sat",100),(2,"sathya",101),(3,"Gowtham,102"),(4,"Karthi",103),(5,"shankar",104);
+
+update slab set from_unit=1 where from_unit=0;
+
+update building_type set name="mall" where name= "Shopping mall";
+
+truncate table slab;
+
+delete from electricity_connection_type where connection_name="Home";
+
+
+
