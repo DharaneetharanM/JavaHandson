@@ -1,0 +1,79 @@
+import java.util.*;
+import java.util.Random;
+import java.time.LocalDate;
+public abstract class Medicine {
+ String Name;
+ double Price;
+ LocalDate ExpireDate=LocalDate.now() ;
+ 
+ void getdetails(String x,double y) {
+     Name=x;
+     Price=y;
+ }
+ abstract void displayLabel();
+	
+ class Tablet extends Medicine{
+	 Tablet(String x,double y){
+		 super(x,y);
+		 }
+	void displayLabel() {
+		
+	 
+		System.out.println("Name :"+Name);
+		System.out.println("Price :"+Price);
+		System.out.println("ExpireDate :"+ExpireDate);
+		System.out.println("store in cool place");
+		
+	}
+  }
+ class Syrup extends Medicine{
+	 Syrup(String x,double y){
+		 super(x,y);
+		 }
+	 void displayLabel() {
+		 System.out.println("Name :"+Name);
+		 System.out.println("Price :"+Price);
+		 System.out.println("ExpireDate :"+ExpireDate);
+		 System.out.println("Take physician’s advice Dosage :\r\n" + "Adult :2spoons twice a day\r\n" + "Children : 1spoon twice a day");
+  }
+ }
+ class Ointment extends Medicine{
+	 Ointment(String x,double y){
+		 super(x,y);
+		 }
+	 void displayLabel() {
+		 System.out.println("Name :"+Name);
+		 System.out.println("Price :"+Price);
+		 System.out.println("ExpireDate :"+ExpireDate);
+		 System.out.println("for external use only");
+	 }
+ }
+}
+class TestMedicine{
+	 
+	 public static void main(String [] args){
+		 Medicine med[]=new Medicine[5];
+		 Random rnd=new Random();
+		 int num=0;
+		 for(int i=0;i<5;i++){
+			 num=rnd.nextInt(3);
+			 if(num==0) 
+			 {  System.out.println("Enter Tablet Details");
+			      Tablet t=new Tablet();
+				 med[i]=new Tablet();
+			 }
+			 else if(num==1) {
+				 System.out.println("Enter Syrup Details");
+				 med[i]=new Syrup();
+			 }
+			 else med[i]=new ointment();
+			 {
+				 System.out.println("Enter Ointment Details");
+				 med[i].displayLabel();
+			 }
+			 System.out.println();
+		 }
+		 
+	 }
+ }
+
