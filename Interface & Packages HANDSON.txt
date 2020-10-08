@@ -1,0 +1,57 @@
+import java.util.Scanner;
+interface Polygon {
+	abstract double calcPeri();
+	abstract double calcArea();
+	
+}
+ class Square implements Polygon{
+    double side;
+    	public Square(double s) {
+		side=s;
+	}
+        public double calcPeri() {
+		
+		double p=side*4;
+		return p;
+	}
+
+	public double calcArea() {
+		double a=side*side;
+		return a;
+	}
+
+}
+class Rectangle implements Polygon{
+	double length;
+	double bredth;
+	public Rectangle(double l,double b) {
+		length=l;
+		bredth=b;
+	}
+	public double calcPeri() {
+		double P=(length+bredth)*(2);
+		return P;
+	}
+	public double calcArea() {
+		double A=length*bredth;
+		return A;
+	}
+}
+
+public class Inher {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scr=new Scanner(System.in);
+      System.out.println("Enter the length & bredth value");
+      double len=scr.nextDouble();
+      double bre=scr.nextDouble();
+      System.out.println("Enter side value");
+      double sid=scr.nextDouble();
+      Square sq=new Square(sid);
+      System.out.println("Perimeter of square :"+sq.calcPeri());
+      System.out.println("Area of square :"+sq.calcArea());
+      Rectangle rec=new Rectangle(len,bre);
+      System.out.println("Perimeter of rectangle :"+rec.calcPeri());
+      System.out.println("Area of rectangle :"+rec.calcArea());
+	}
+}
